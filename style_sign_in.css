@@ -1,0 +1,82 @@
+.global {
+    height: 100%;
+    width: 99%;
+    padding: 0;
+    background: rgba(0, 65, 70, 1);
+    background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: transparent; /* Прозрачный фон */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
+    color: #fff; /* Цвет текста */
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0); /* Прозрачный фон формы */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff; /* Цвет текста меток */
+}
+
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Прозрачная рамка */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон полей ввода */
+    color: #fff; /* Цвет текста в полях ввода */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"] {
+    width: auto; /* Автоматически подстраиваемся под содержимое */
+    display: block; /* Помещаем кнопку в блочный элемент */
+    margin: 0 auto; /* Выравниваем по центру */
+    padding: 10px 20px; /* Устанавливаем внутренний отступ */
+    border: none;
+    border-radius: 5px;
+    background-color: #15142a; /* Черный цвет фона */
+    color: #fff;
+    cursor: pointer;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #333; /* Цвет фона при наведении */
+}

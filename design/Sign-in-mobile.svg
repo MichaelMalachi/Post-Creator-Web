@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1125"
+   height="2436"
+   viewBox="0 0 1125 2436"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Sign-in-mobile.svg"
+   inkscape:export-filename="Sign-in-mobile.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.20528463"
+     inkscape:cx="326.37611"
+     inkscape:cy="1634.3162"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="linearGradient10"
+       x1="257.34924"
+       y1="82.004204"
+       x2="3640.2136"
+       y2="2104.0769"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       gradientTransform="matrix(0.29358203,0,0,1.1294298,-2.6541948,-4.7073884)" />
+    <linearGradient
+       id="linearGradient8"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000848;stop-opacity:1;"
+         offset="0"
+         id="stop9" />
+      <stop
+         style="stop-color:#004246;stop-opacity:1;"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="font-variation-settings:'wdth' 109.9, 'wght' 700;fill:url(#linearGradient10);fill-opacity:1;stroke:none;stroke-width:3.25747;stroke-dasharray:none"
+       id="rect2"
+       width="1127.5383"
+       height="2437.0769"
+       x="-2.6516733"
+       y="0.058397111"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:311.136px;line-height:0px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;text-align:center;text-anchor:middle;fill:#d90baa;stroke-width:4.49364"
+       x="601.82739"
+       y="263.34503"
+       id="text137"
+       transform="scale(0.93304305,1.0717619)"><tspan
+         id="tspan137"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:109.333px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;fill:#ffffff;fill-opacity:1;stroke-width:4.49364"
+         x="601.82739"
+         y="263.34503"
+         sodipodi:role="line">Create an account</tspan></text>
+    <g
+       id="g1"
+       transform="translate(-396)">
+      <rect
+         style="fill:#000000;fill-opacity:0.52;stroke-width:0.636418"
+         id="rect1412"
+         width="482.1116"
+         height="153.73424"
+         x="393"
+         y="2283"
+         ry="0" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:88.0954px;line-height:0px;font-family:Archivo;-inkscape-font-specification:'Archivo, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:0.52;stroke-width:6.6744"
+         x="635.35846"
+         y="2389.4075"
+         id="text1414-4"
+         transform="scale(0.99887657,1.0011247)"><tspan
+           sodipodi:role="line"
+           id="tspan1414-9"
+           x="635.35846"
+           y="2389.4075"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:88.0954px;font-family:Archivo;-inkscape-font-specification:'Archivo, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:6.6744">Back</tspan></text>
+    </g>
+    <g
+       id="g27"
+       transform="matrix(0.80206666,0,0,0.80206666,-977.46799,231.45801)">
+      <g
+         id="g25"
+         transform="translate(3.0517578e-5,13.582015)">
+        <rect
+           style="fill:#000000;fill-opacity:0.52;stroke-width:0.622702"
+           id="rect1414"
+           width="543.95392"
+           height="130.44655"
+           x="1638.983"
+           y="1748.4288"
+           ry="49.623867" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:74.7507px;line-height:0px;font-family:Archivo;-inkscape-font-specification:'Archivo, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:0.52;stroke-width:5.66336"
+           x="1910.583"
+           y="1832.4623"
+           id="text1414"
+           transform="scale(0.99887657,1.0011247)"><tspan
+             sodipodi:role="line"
+             id="tspan1414"
+             x="1910.583"
+             y="1832.4623"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:74.7507px;font-family:Archivo;-inkscape-font-specification:'Archivo, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:5.66336">Next</tspan></text>
+        <g
+           id="g24">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.796px;line-height:0px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;text-align:center;text-anchor:middle;fill:#d90baa;stroke-width:5.30161"
+             x="2040.5403"
+             y="599.98138"
+             id="text1"
+             transform="scale(0.93304305,1.0717619)"><tspan
+               id="tspan1"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.796px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+               x="2040.5403"
+               y="599.98138"
+               sodipodi:role="line">Session</tspan></text>
+          <g
+             id="g9">
+            <rect
+               style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+               id="rect1394"
+               width="1022.0339"
+               height="106.97319"
+               x="1408.983"
+               y="711.38019"
+               ry="42.479408" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48.054px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+               x="1641.8457"
+               y="732.04834"
+               id="text2"
+               transform="scale(0.93304305,1.0717619)"><tspan
+                 id="tspan2"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48.054px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1641.8457"
+                 y="732.04834"
+                 sodipodi:role="line">E-mail</tspan></text>
+          </g>
+          <g
+             id="g10">
+            <rect
+               style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+               id="rect1"
+               width="1022.0339"
+               height="106.97319"
+               x="1408.983"
+               y="831.65033"
+               ry="42.479408" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+               x="1678.546"
+               y="845.26978"
+               id="text3"
+               transform="scale(0.93304305,1.0717619)"><tspan
+                 id="tspan3"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1678.546"
+                 y="845.26978"
+                 sodipodi:role="line">Password</tspan></text>
+          </g>
+          <g
+             id="g11">
+            <rect
+               style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+               id="rect3"
+               width="1022.0339"
+               height="106.97319"
+               x="1408.983"
+               y="951.65033"
+               ry="42.479408" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+               x="1813.5878"
+               y="955.36896"
+               id="text5"
+               transform="scale(0.93304305,1.0717619)"><tspan
+                 id="tspan5"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1813.5878"
+                 y="955.36896"
+                 sodipodi:role="line">Re-enter password</tspan></text>
+          </g>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.796px;line-height:0px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;text-align:center;text-anchor:middle;fill:#d90baa;stroke-width:5.30161"
+             x="2040.5403"
+             y="1122.4862"
+             id="text6"
+             transform="scale(0.93304305,1.0717619)"><tspan
+               id="tspan6"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:114.796px;font-family:Archivo;-inkscape-font-specification:'Archivo, @wght=700,wdth=109.9';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wdth' 109.9, 'wght' 700;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+               x="2040.5403"
+               y="1122.4862"
+               sodipodi:role="line">Personal</tspan></text>
+          <g
+             id="g17">
+            <g
+               id="g16"
+               transform="translate(0,300)">
+              <rect
+                 style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+                 id="rect16"
+                 width="1022.0339"
+                 height="106.97319"
+                 x="1408.983"
+                 y="951.65033"
+                 ry="42.479408" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1672.1156"
+                 y="955.36896"
+                 id="text16"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan16"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                   x="1672.1156"
+                   y="955.36896"
+                   sodipodi:role="line">Birthday</tspan></text>
+            </g>
+            <g
+               id="g8"
+               transform="matrix(0.77120713,0,0,0.80933928,532.17333,248.73254)">
+              <path
+                 style="fill:#000000;fill-opacity:0.26;stroke-width:4.41823"
+                 id="path7"
+                 sodipodi:type="arc"
+                 sodipodi:cx="2382.863"
+                 sodipodi:cy="1306.0916"
+                 sodipodi:rx="54.263855"
+                 sodipodi:ry="54.263855"
+                 sodipodi:start="0.58416807"
+                 sodipodi:end="0.58326037"
+                 sodipodi:arc-type="slice"
+                 d="m 2428.1284,1336.0184 a 54.263855,54.263855 0 0 1 -75.1819,15.3453 54.263855,54.263855 0 0 1 -15.3624,-75.1784 54.263855,54.263855 0 0 1 75.1749,-15.3795 54.263855,54.263855 0 0 1 15.3965,75.1715 l -45.2925,-29.8857 z" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+                 x="2553.1042"
+                 y="1235.2822"
+                 id="text8"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan8"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+                   x="2553.1042"
+                   y="1235.2822"
+                   sodipodi:role="line">?</tspan></text>
+            </g>
+          </g>
+          <g
+             id="g20"
+             transform="translate(0,120)">
+            <g
+               id="g18"
+               transform="translate(0,300)">
+              <rect
+                 style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+                 id="rect17"
+                 width="1022.0339"
+                 height="106.97319"
+                 x="1408.983"
+                 y="951.65033"
+                 ry="42.479408" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1644.2496"
+                 y="955.36896"
+                 id="text17"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan17"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                   x="1644.2496"
+                   y="955.36896"
+                   sodipodi:role="line">Gender</tspan></text>
+            </g>
+            <g
+               id="g19"
+               transform="matrix(0.77120713,0,0,0.80933928,532.17333,248.73254)">
+              <path
+                 style="fill:#000000;fill-opacity:0.26;stroke-width:4.41823"
+                 id="path18"
+                 sodipodi:type="arc"
+                 sodipodi:cx="2382.863"
+                 sodipodi:cy="1306.0916"
+                 sodipodi:rx="54.263855"
+                 sodipodi:ry="54.263855"
+                 sodipodi:start="0.58416807"
+                 sodipodi:end="0.58326037"
+                 sodipodi:arc-type="slice"
+                 d="m 2428.1284,1336.0184 a 54.263855,54.263855 0 0 1 -75.1819,15.3453 54.263855,54.263855 0 0 1 -15.3624,-75.1784 54.263855,54.263855 0 0 1 75.1749,-15.3795 54.263855,54.263855 0 0 1 15.3965,75.1715 l -45.2925,-29.8857 z" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="2553.1042"
+                 y="1235.2822"
+                 id="text18"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan18"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+                   x="2553.1042"
+                   y="1235.2822"
+                   sodipodi:role="line">?</tspan></text>
+            </g>
+          </g>
+          <g
+             id="g23"
+             transform="translate(0,240)">
+            <g
+               id="g21"
+               transform="translate(0,300)">
+              <rect
+                 style="fill:#000000;fill-opacity:0.264629;stroke-width:0.772952"
+                 id="rect20"
+                 width="1022.0339"
+                 height="106.97319"
+                 x="1408.983"
+                 y="951.65033"
+                 ry="42.479408" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="1618.5273"
+                 y="955.36896"
+                 id="text20"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan20"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                   x="1618.5273"
+                   y="955.36896"
+                   sodipodi:role="line">Role</tspan></text>
+            </g>
+            <g
+               id="g22"
+               transform="matrix(0.77120713,0,0,0.80933928,532.17333,248.73254)">
+              <path
+                 style="fill:#000000;fill-opacity:0.26;stroke-width:4.41823"
+                 id="path21"
+                 sodipodi:type="arc"
+                 sodipodi:cx="2382.863"
+                 sodipodi:cy="1306.0916"
+                 sodipodi:rx="54.263855"
+                 sodipodi:ry="54.263855"
+                 sodipodi:start="0.58416807"
+                 sodipodi:end="0.58326037"
+                 sodipodi:arc-type="slice"
+                 d="m 2428.1284,1336.0184 a 54.263855,54.263855 0 0 1 -75.1819,15.3453 54.263855,54.263855 0 0 1 -15.3624,-75.1784 54.263855,54.263855 0 0 1 75.1749,-15.3795 54.263855,54.263855 0 0 1 15.3965,75.1715 l -45.2925,-29.8857 z" />
+              <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+                 x="2553.1042"
+                 y="1235.2822"
+                 id="text21"
+                 transform="scale(0.93304305,1.0717619)"><tspan
+                   id="tspan21"
+                   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+                   x="2553.1042"
+                   y="1235.2822"
+                   sodipodi:role="line">?</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g26"
+         transform="translate(182.65474,-160)">
+        <g
+           id="g22-3"
+           transform="matrix(0.79242435,0,0,0.79242435,461.12206,844.27958)">
+          <path
+             style="fill:#000000;fill-opacity:0.26;stroke-width:4.41823"
+             id="path21-2"
+             sodipodi:type="arc"
+             sodipodi:cx="1287.2396"
+             sodipodi:cy="1265.6672"
+             sodipodi:rx="54.263855"
+             sodipodi:ry="54.263855"
+             sodipodi:start="0.58416807"
+             sodipodi:end="0.58326037"
+             sodipodi:arc-type="slice"
+             d="m 1332.505,1295.5941 a 54.263855,54.263855 0 0 1 -75.1819,15.3453 54.263855,54.263855 0 0 1 -15.3624,-75.1784 54.263855,54.263855 0 0 1 75.1749,-15.3795 54.263855,54.263855 0 0 1 15.3965,75.1715 l -45.2925,-29.8858 z" />
+        </g>
+        <g
+           id="g22-3-9"
+           transform="matrix(0.39341561,0,0,0.39341561,974.07468,1348.9975)"
+           style="fill:#ffffff;fill-opacity:1">
+          <path
+             style="fill:#ffffff;fill-opacity:1;stroke-width:4.41823"
+             id="path21-2-3"
+             sodipodi:type="arc"
+             sodipodi:cx="1287.2396"
+             sodipodi:cy="1265.6672"
+             sodipodi:rx="54.263855"
+             sodipodi:ry="54.263855"
+             sodipodi:start="0.58416807"
+             sodipodi:end="0.58326037"
+             sodipodi:arc-type="slice"
+             d="m 1332.505,1295.5941 a 54.263855,54.263855 0 0 1 -75.1819,15.3453 54.263855,54.263855 0 0 1 -15.3624,-75.1784 54.263855,54.263855 0 0 1 75.1749,-15.3795 54.263855,54.263855 0 0 1 15.3965,75.1715 l -45.2925,-29.8858 z" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;line-height:0px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:0.45;stroke-width:5.30161"
+           x="1927.6062"
+           y="1740.5944"
+           id="text16-3"
+           transform="scale(0.93304305,1.0717619)"><tspan
+             id="tspan16-6"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.7237px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:5.30161"
+             x="1927.6062"
+             y="1740.5944"
+             sodipodi:role="line">Keep me signed in</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
