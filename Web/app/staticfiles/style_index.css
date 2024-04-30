@@ -1,3 +1,5 @@
+/* Убираем загрузку тега static в CSS файле */
+
 .global {
     height: 100%;
     width: 99%;
