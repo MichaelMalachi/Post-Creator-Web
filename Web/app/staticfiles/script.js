@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loader.style.width = loaderWidth + '%';
         if (loaderWidth >= 195) {
             clearInterval(interval);
-            // Изменяем URL на нужный, без .html расширения
+            // Изменяем URL на нужный, без расширения
             window.location.href = "/Privacy_Policy/";
         }
     }

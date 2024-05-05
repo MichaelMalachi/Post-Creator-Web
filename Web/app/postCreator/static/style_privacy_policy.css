@@ -1,9 +1,52 @@
-/* Убираем загрузку тега static в CSS файле */
+
 
 .global {
     height: 100%;
-    width: 99%;
+    width: 100%;
     padding: 0;
-    background: rgb(0, 10, 72);
+    margin: 0;
+    background: rgb(100, 10, 72);
     background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+
+    justify-content: center;
+    align-items: center;
 }
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.left-section {
+    background-color: rgb(255, 0, 0);
+    float: left;
+    padding: 20px;
+    width: 200px; /* ваша ширина */
+    height: 110px;
+    margin-left: 360px;
+}
+
+.right-section {
+    background-color: blue;
+    float:right;
+    width: 560px; /* ваша ширина */
+    height: 150px;
+    margin-right: 360px;
+}
+
+section h2 {
+    color: #555;
+}
+
+
+body {
+    background-color: #808080; /* серый цвет в шестнадцатеричном формате */
+  }
+
+

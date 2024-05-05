@@ -6,3 +6,7 @@ class HomeView(TemplateView):
 
 class Privacy_Policy(TemplateView):
     template_name = "Privacy_Policy.html"
+
+
+class HomePostCreatorView(TemplateView):
+    template_name = "home_post_creator.html"

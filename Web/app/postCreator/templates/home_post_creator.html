@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /* Стили для всего документа */
+        .global {
+            min-height: 100vh; /* Минимальная высота на весь экран */
+            padding: 0;
+            margin: 0;
+            background: rgb(100, 10, 72);
+            background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+            display: flex;
+            align-items: flex-start; /* Чтобы заголовок был слева */
+            justify-content: flex-start; /* Чтобы заголовок был слева */
+            flex-direction: column; /* Для вертикального выравнивания */
+            padding-left: 20px; /* Для отступа заголовка от левого края */
+            font-family: 'Archivo', sans-serif; /* Применяем шрифт Archivo */
+        }
+
+        /* Стили для заголовка */
+        .welcome-back {
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        /* Стили для футера */
+        footer {
+            position: fixed; /* Фиксированное положение */
+            bottom: 0; /* Прижимаем к нижней части экрана */
+            left: 0; /* Прижимаем к левой части экрана */
+            color: white;
+            font-size: 24px;
+            font-family: 'Archivo', sans-serif; /* Применяем шрифт Archivo */
+            text-align: left; /* Выравниваем текст по левому краю */
+            padding: 20px;
+            background-color: #333; /* Цвет фона футера */
+            width: 100%; /* Ширина футера на всю ширину страницы */
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5); /* Тень под футером */
+        }
+    </style>
+</head>
+<body class="global">
+{% load static %}
+<!-- Заголовок "Welcome back" -->
+{% if request.user.is_authenticated %}
+<div class="welcome-back">Welcome back</div>
+{% else %}
+<div class="welcome-back">Welcome</div>
+{% endif %}
+    <img src="{% static 'images/image1.png' %}" alt="Image 1">
+    <!-- Изображение 2 -->
+    <img src="{% static 'images/image2.png' %}" alt="Image 2">
+    <!-- Изображение 3 -->
+    <img src="{% static 'images/image3.png' %}" alt="Image 3">
+    <!-- Изображение 4 -->
+    <img src="{% static 'images/image4.png' %}" alt="Image 4">
+<footer>Post Creator</footer>
+</body>
+</html>
