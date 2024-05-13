@@ -10,3 +10,7 @@ class Privacy_Policy(TemplateView):
 
 class HomePostCreatorView(TemplateView):
     template_name = "home_post_creator.html"
+
+
+class CreatePostView(TemplateView):
+    template_name = "create_post.html"

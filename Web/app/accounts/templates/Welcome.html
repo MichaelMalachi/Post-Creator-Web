@@ -5,123 +5,117 @@
     <title>Title</title>
     <style>
     .global {
-    height: 100%;
-    width: 99%;
-    padding: 0;
-    background: rgb(0, 10, 72);
-    background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
-}
+        height: 100%;
+        width: 99%;
+        padding: 0;
+        background: rgb(0, 10, 72);
+        background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+    }
 
-/* Стили для текста Welcome */
-.welcome-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    font-size: 60px;
-    font-weight: bold;
-    z-index: 10; /* Установка высокого значения z-index, чтобы текст был над другими элементами */
-}
+    .welcome-text {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 60px;
+        font-weight: bold;
+        z-index: 10;
+    }
 
-/* Стили для текста Skip for now */
-.skip-text {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    background-color: #212121; /* Черный фон */
-    padding: 10px 20px; /* Отступы для текста */
-    border-radius: 5px; /* Скругление углов */
-    z-index: 10; /* Установка высокого значения z-index, чтобы текст был над другими элементами */
-    text-decoration: none; /* Убираем подчеркивание */
-}
+    .skip-text {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        background-color: #212121;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 10;
+        text-decoration: none;
+    }
 
-.skip-text:hover {
-    text-decoration: none; /* Добавляем стиль для наведения */
-}
+    .skip-text:hover {
+        text-decoration: none;
+    }
 
-/* Стили для формы входа */
-.login-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 400px; /* Увеличиваем ширину формы */
-    height: 300px; /* Увеличиваем высоту формы */
-}
+    .login-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 400px;
+        height: 300px;
+    }
 
+    .login-heading {
+        color: white;
+        font-size: 24px;
+    }
 
-.login-heading {
-    color: white;
-    font-size: 24
+    .login-input {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        margin-bottom: 10px;
+        width: 100%;
+        color: white;
+    }
 
+    .next-button {
+        background-color: #001429;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 13px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-}
+    .next-button:hover {
+        background-color: #333;
+    }
 
-.login-input {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 5px;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.welcome-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    font-size: 60px;
-    font-weight: bold;
-}
-
-/* Стили для кнопки "Next" */
-.next-button {
-    background-color: #001429; /* Черный цвет фона */
-    color: white; /* Белый цвет текста */
-    border: none;
-    border-radius: 10px; /* Скругляем края кнопки */
-    padding: 13px 60px; /* Отступы внутри кнопки */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    margin-top: 20px; /* Отступ сверху */
-    cursor: pointer;
-    transition: background-color 0.3s; /* Анимация при наведении */
-}
-
-/* Стили для кнопки "Next" при наведении */
-.next-button:hover {
-    background-color: #333; /* Цвет фона при наведении */
-}
-
-/* Стили для текста "I don't have an account" */
-.no-account-text {
-    color: gray; /* Серый цвет текста */
-    font-size: 18px; /* Размер шрифта */
-}
-
+    .no-account-text {
+        color: gray;
+        font-size: 18px;
+    }
 
     </style>
 </head>
 <body class="global">
-<!-- Текст Welcome -->
 <div class="welcome-text">Welcome!</div>
-<!-- Текст Skip for now -->
 <a href="http://127.0.0.1:8000/home/" class="skip-text">Skip for now</a>
-<!-- Форма для входа -->
 <div class="login-form">
     <h1 class="login-heading">Log in</h1>
-    <input type="text" class="login-input" placeholder="E-mail">
-    <br> <!-- Добавляем перенос строки для размещения полей друг под другом -->
-    <input type="password" class="login-input" placeholder="Password">
-    <button class="next-button">Next</button> <!-- Кнопка "Next" -->
-     <p class="no-account-text"><a href="http://127.0.0.1:8000/sign_in/" style="color: white;">I don't have an account</a></p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.username }}
+        <br>
+        {{ form.password }}
+        {% if form.errors %}
+            <div style="color: red;">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <button type="submit" class="next-button">Next</button>
+    </form>
+    <p class="no-account-text"><a href="http://127.0.0.1:8000/sign_in/" style="color: white;">I don't have an account</a></p>
 </div>
-
 </body>
 </html>

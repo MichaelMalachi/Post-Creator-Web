@@ -6,88 +6,133 @@
 <title>Регистрационная форма</title>
 <style>
     .global {
-    height: 100%;
-    width: 99%;
-    padding: 0;
-    background: rgba(0, 65, 70, 1);
-    background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
-}
+        height: 100%;
+        width: 99%;
+        padding: 0;
+        background: rgba(0, 65, 70, 1);
+        background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+    }
 
-.container {
-    max-width: 400px;
-    margin: 50px auto;
-    background-color: transparent; /* Прозрачный фон */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
-    color: #fff; /* Цвет текста */
-}
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: transparent;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
+        color: #fff;
+    }
 
-h1, h2 {
-    text-align: center;
-}
+    h1, h2 {
+        text-align: center;
+    }
 
-form {
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0); /* Прозрачный фон формы */
-    padding: 20px;
-    border-radius: 8px;
-}
+    form {
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 20px;
+        border-radius: 8px;
+    }
 
-.form-group {
-    margin-bottom: 20px;
-}
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #fff; /* Цвет текста меток */
-}
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        appearance: none; /* Удаляет стандартные стили браузера для select */
+    }
 
-input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Прозрачная рамка */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон полей ввода */
-    color: #fff; /* Цвет текста в полях ввода */
-}
+    select option {
+        background: rgba(0, 10, 72, 1); /* Фон для элементов списка */
+        color: #fff; /* Цвет текста элементов списка */
+    }
 
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
+    select option[disabled] {
+        color: #ccc; /* Цвет текста для неактивного элемента */
+    }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
+    input[type="submit"] {
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #15142a;
+        color: #fff;
+        cursor: pointer;
+    }
 
-input[type="submit"] {
-    width: auto; /* Автоматически подстраиваемся под содержимое */
-    display: block; /* Помещаем кнопку в блочный элемент */
-    margin: 0 auto; /* Выравниваем по центру */
-    padding: 10px 20px; /* Устанавливаем внутренний отступ */
-    border: none;
-    border-radius: 5px;
-    background-color: #15142a; /* Черный цвет фона */
-    color: #fff;
-    cursor: pointer;
-}
+    input[type="submit"]:hover {
+        background-color: #333;
+    }
 
+    .checkbox label {
+        color: #fff;
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        user-select: none;
+    }
 
-input[type="submit"]:hover {
-    background-color: #333; /* Цвет фона при наведении */
-}
+    .checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
 
+    .checkbox .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 5px;
+    }
+
+    .checkbox:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    .checkbox input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkbox .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .checkbox input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checkbox .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
 </style>
 </head>
 <body class="global">
@@ -95,7 +140,8 @@ input[type="submit"]:hover {
 <div class="container">
     <h1>Create an account</h1>
     <h2>Session</h2>
-    <form action="#" method="post">
+    <form method="post">
+        {% csrf_token %}
         <div class="form-group">
             <input type="email" id="email" name="email" placeholder="E-mail" required>
         </div>
@@ -105,22 +151,26 @@ input[type="submit"]:hover {
         <div class="form-group">
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required>
         </div>
-        <h2>Session</h2>
+        <h2>Personal</h2>
         <div class="form-group">
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" placeholder="Birthday">
+            <input type="date" id="birthday" name="dateOfBirth" placeholder="Birthday ?">
         </div>
         <div class="form-group">
-            <label for="gender">Gender:</label>
             <select id="gender" name="gender">
+                <option value="" disabled selected>Gender ?</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="role">Role:</label>
-            <input type="text" id="role" name="role" placeholder="Role">
+            <input type="text" id="role" name="role" placeholder="Role ?">
+        </div>
+        <div class="form-group">
+            <label class="checkbox">
+                <input type="checkbox" id="keep_signed_in" name="keep_signed_in">
+                Keep me signed in
+            </label>
         </div>
         <input type="submit" value="Next">
     </form>

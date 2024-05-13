@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Стили для всего документа */
+        .global {
+            min-height: 100vh; /* Минимальная высота на весь экран */
+            padding: 20px;
+            margin: 0;
+            background: rgb(100, 10, 72);
+            background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+            display: flex;
+            flex-direction: column; /* Изменяем направление flex контейнера на вертикальное */
+            align-items: flex-start; /* Выравниваем элементы слева */
+            font-family: 'Archivo', sans-serif; /* Применяем шрифт Archivo */
+            color: white; /* Белый цвет текста */
+            font-size: 24px; /* Размер текста */
+            text-transform: uppercase; /* Преобразование текста в верхний регистр */
+            position: relative; /* Добавляем относительное позиционирование */
+        }
+
+        /* Позиционирование "Create a Post" и кнопки "назад" вверху слева */
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .create-post {
+            margin-bottom: 40px; /* Добавляем отступ снизу для "Create а Post" */
+            left: 40px; /* Сдвигаем "Create а Post" влево */
+            position: absolute; /* Абсолютное позиционирование для точного контроля над расположением */
+        }
+
+        /* Размещение элементов, связанных с изображениями, внизу */
+        .image-section {
+            display: flex;
+            flex-direction: row; /* Изменяем направление на строку */
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 50vh;
+            width: 100%; /* Добавляем ширину 100% */
+        }
+
+        .image-preview {
+            max-width: 80%; /* Ограничиваем максимальную ширину для изображения */
+            max-height: 50%; /* Ограничиваем максимальную высоту для изображения */
+        }
+
+        /* Стили для кнопки добавления изображения */
+        .add-image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px dashed white;
+            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .add-image img {
+            width: 50px; /* Размер изображения "+" */
+        }
+
+        .add-image:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Изменение цвета фона при наведении */
+        }
+
+        /* Стили для input[type="file"] */
+        input[type="file"] {
+            display: none; /* Скрыть стандартное отображение элемента */
+        }
+
+        .file-input-label {
+            cursor: pointer; /* Курсор при наведении на элемент */
+        }
+
+        /* Дополнительные стили для "Media:" */
+        .media-label {
+            margin-bottom: 0; /* Убираем нижний отступ у "Media:" */
+            left: 20px; /* Сдвигаем "Media:" влево */
+            position: absolute; /* Абсолютное позиционирование для точного контроля над расположением */
+            top: 100px; /* Перемещаем "Media:" ниже "Create а Post" */
+        }
+
+        /* Стили для "Tags:" */
+        .text-container {
+            position: absolute;
+            left: 20px;
+            top: calc(50% + 25vh);
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+
+        /* Стили для поля ввода тегов */
+        .text-input {
+            width: 200px;
+            height: 30px;
+            border: none;
+            border-radius: 20px;
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: rgb(52, 49, 137);
+        }
+
+        /* Стили для поля ввода текста */
+        .tags-container {
+            position: absolute;
+            left: 20px;
+            top: calc(50% + 20vh);
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+
+        /* Стили для поля ввода текста */
+        .tags-input {
+            width: 200px;
+            height: 30px;
+            border: none;
+            border-radius: 20px;
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: rgb(52, 49, 137);
+        }
+    </style>
+</head>
+<body class="global">
+{% load static %}
+<!-- Create а Post -->
+<a class="back-link" href="javascript:history.go(-1)"> < </a>
+<span class="create-post">Create а Post</span> <!-- "Create а Post" с выравниванием по вертикали -->
+
+<!-- "Media:" с выравниванием по вертикали -->
+<span class="media-label">Media:</span>
+
+<!-- Размещение элементов, связанных с изображениями, внизу -->
+<div class="image-section">
+    <!-- Превью изображения слева -->
+    <div class="image-preview">
+        <img class="preview-image" src="preview_image.jpg" >
+    </div>
+    <!-- Кнопка для добавления изображения -->
+    <div class="add-image" onclick="document.getElementById('file-input').click()">
+        <img src="{% static 'images/plus_icon.png' %}" alt="Add Image">
+        <input type="file" id="file-input" class="file-input-label" accept="image/*" onchange="previewImage(event)">
+    </div>
+</div>
+
+<!-- Контейнер для "Tags:" и поля ввода -->
+<div class="tags-container">
+    <label for="tags-input">Tags:</label>
+    <input type="text" id="tags-input" class="tags-input">
+</div>
+
+<!-- Контейнер для "Text:" и поля ввода -->
+<div class="text-container">
+    <label for="text-input">Text:</label>
+    <input type="text" id="text-input" class="text-input">
+</div>
+
+<!-- Еще одно поле для ввода текста, без явного указания на название -->
+<!--<div class="additional-text-container">-->
+<!--    <input type="text" class="text-input">-->
+<!--</div>-->
+
+<script>
+    // Функция для отображения предварительного просмотра выбранного изображения
+    function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function(){
+            var preview = document.querySelector('.preview-image');
+            preview.src = reader.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>
+
+</body>
+</html>
