@@ -4,13 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Регистрационная форма</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet">
 <style>
+    body {
+        font-family: 'Archivo', sans-serif;
+    }
+
     .global {
-        height: 100%;
+        min-height: 100vh;
         width: 99%;
         padding: 0;
         background: rgba(0, 65, 70, 1);
         background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+    }
+
+    .container0 {
+        background-color: transparent;
+        padding-left: 20px;
+        padding-top: 20px;
+        font-size: 50px;
+        font-family: 'Archivo', sans-serif;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
+        color: #fff;
     }
 
     .container {
@@ -23,7 +39,11 @@
         color: #fff;
     }
 
-    h1, h2 {
+    h1 {
+        text-align: left;
+    }
+
+    h2 {
         text-align: center;
     }
 
@@ -35,7 +55,8 @@
     }
 
     .form-group {
-        margin-bottom: 20px;
+        position: relative;
+        margin-bottom: 5px; /* Еще меньший отступ */
     }
 
     input[type="email"],
@@ -43,13 +64,30 @@
     input[type="date"],
     input[type="text"],
     select {
-        width: 100%;
+        width: calc(100% - 40px);
         padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.2);
-        color: #fff;
-        appearance: none; /* Удаляет стандартные стили браузера для select */
+        padding-left: 40px;
+        border: none;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 24px;
+        color: white;
+        margin-bottom: 3px; /* Еще меньший отступ */
+    }
+
+    .question-mark {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        line-height: 20px;
+        font-size: 14px;
+        color: rgba(0, 10, 72, 1);
     }
 
     select option {
@@ -67,10 +105,12 @@
         margin: 0 auto;
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        background-color: #15142a;
+        border-radius: 20px;
+        background-color: #001429;
         color: #fff;
         cursor: pointer;
+        font-size: 24px;
+        transition: background-color 0.3s;
     }
 
     input[type="submit"]:hover {
@@ -82,7 +122,7 @@
         display: block;
         position: relative;
         padding-left: 35px;
-        margin-bottom: 12px;
+        margin-bottom: 5px; /* Еще меньший отступ */
         cursor: pointer;
         font-size: 22px;
         user-select: none;
@@ -136,35 +176,41 @@
 </style>
 </head>
 <body class="global">
-
+<div class="container0">Create an account</div>
 <div class="container">
-    <h1>Create an account</h1>
+
     <h2>Session</h2>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
+            <span class="question-mark">?</span>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
         </div>
         <div class="form-group">
+            <span class="question-mark">?</span>
             <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
         <div class="form-group">
+            <span class="question-mark">?</span>
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required>
         </div>
         <h2>Personal</h2>
         <div class="form-group">
-            <input type="date" id="birthday" name="dateOfBirth" placeholder="Birthday ?">
+            <span class="question-mark">?</span>
+            <input type="date" id="birthday" name="dateOfBirth" placeholder="Birthday">
         </div>
         <div class="form-group">
+            <span class="question-mark">?</span>
             <select id="gender" name="gender">
-                <option value="" disabled selected>Gender ?</option>
+                <option value="" disabled selected>Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
         </div>
         <div class="form-group">
-            <input type="text" id="role" name="role" placeholder="Role ?">
+            <span class="question-mark">?</span>
+            <input type="text" id="role" name="role" placeholder="Role">
         </div>
         <div class="form-group">
             <label class="checkbox">

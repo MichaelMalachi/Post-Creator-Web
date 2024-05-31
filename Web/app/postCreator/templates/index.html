@@ -4,18 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .global {
+            min-height: 100vh; /* Используем min-height вместо height */
+            width: 100%; /* Ширина 100% */
+            padding: 0;
+            margin: 0;
+            background: rgb(0, 10, 72);
+            background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
+            display: flex; /* Для гибкого выравнивания */
+            flex-direction: column; /* Вертикальное выравнивание */
+            box-sizing: border-box;
+            justify-content: space-between; /* Распределяем пространство */
+            position: relative; /* Added for positioning the logo */
+        }
 
-    <link rel="stylesheet" type="text/css" href="/static/style_index.css">
+        .main-text1 {
+            margin-left: 200px;
+            margin-top: 200px;
+            font-size: 60px;
+            color: #FFFFFF;
+            font-family: Archivo, Arial, Helvetica, sans-serif;
+        }
 
+        .main-text2 {
+            margin-left: 300px;
+            margin-top: -100px;
+            font-size: 60px;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .loader {
+            position: fixed;
+            bottom: 10px; /* Подняли строку над линией */
+            left: 3px;
+            height: 10px;
+            background-color: white;
+            transition: width 5s linear; /* Используем CSS-переход вместо анимации */
+            display: block;
+            z-index: 9999;
+            width: 0; /* Изначально ширина полосы загрузки равна 0 */
+        }
+
+        .loader-text {
+            position: fixed;
+            bottom: 40px; /* Подняли текст над линией загрузки */
+            left: 40px;
+            font-size: 30px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            z-index: 10000;
+        }
+
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        .btn {
+            display: none;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: -140px;
+            right: 10px;
+            width: 300px; /* Adjust the width to be double the previous size */
+        }
+    </style>
 </head>
 <body class="global">
-<div class="main-text1">
-    <h1>Post</h1>
-</div>
-<div class="main-text2">
-    <h1>Creator</h1>
-</div>
-<div class="loader"></div>
-<script src="/static/script.js"></script>
+{% load static %}
+
+    <div class="content">
+        <div class="main-text1">
+            <h1>Post</h1>
+        </div>
+        <div class="main-text2">
+            <h1>Creator</h1>
+        </div>
+    </div>
+    <img src="{% static 'images/logo2.png' %}" alt="Image 1" class="logo">
+    <div class="loader-text">Loading components...</div> <!-- Добавили текст -->
+    <div class="loader"></div>
+    <script src="/static/script.js"></script>
 </body>
 </html>

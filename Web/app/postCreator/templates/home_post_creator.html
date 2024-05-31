@@ -35,6 +35,7 @@
             justify-content: space-between; /* Равномерно распределяем пространство между изображениями */
             margin: 20px 0; /* Верхний и нижний отступы для контейнера */
             overflow-x: auto; /* Добавляем горизонтальную прокрутку, если изображения не вмещаются */
+            margin-top: 100px; /* Добавляем отступ сверху для избегания пересечения с заголовком */
         }
 
         /* Стили для изображений */
@@ -68,13 +69,29 @@
             right: 20px;
             text-align: right;
             color: white;
+            display: flex; /* Добавляем flexbox */
+            align-items: center; /* Выравниваем по вертикали */
         }
 
         .user-info img {
-            width: 50px;
-            height: 50px;
+            width: 100px; /* Измененная ширина изображения */
+            height: 100px; /* Измененная высота изображения */
             border-radius: 50%;
-            margin-bottom: 10px;
+            margin-left: 10px; /* Отступ слева от изображения */
+        }
+
+        .user-details {
+            text-align: left; /* Выравниваем текст по левому краю */
+            margin-right: 10px; /* Отступ справа от текста */
+        }
+
+        .user-details .username {
+            text-transform: uppercase; /* Преобразование текста в заглавные буквы */
+        }
+
+        .user-details .email {
+            color: gray; /* Серый цвет текста */
+            text-transform: lowercase; /* Преобразование текста в строчные буквы */
         }
 
         .icons {
@@ -109,20 +126,23 @@
 
 <div class="image-container">
     <!-- Изображение 1 -->
-    <a href="/create_post/"><img src="{% static 'images/image1.png' %}" alt="Image 1"></a>
+    <a href="/create_post/"><img src="{% static 'images/image01.png' %}" alt="Image 1"></a>
     <!-- Изображение 2 -->
-    <a href="#"><img src="{% static 'images/image2.png' %}" alt="Image 2"></a>
+    <a href="#"><img src="{% static 'images/image02.png' %}" alt="Image 2"></a>
     <!-- Изображение 3 -->
-    <a href="#"><img src="{% static 'images/image4.png' %}" alt="Image 4"></a>
+    <a href="#"><img src="{% static 'images/image03.png' %}" alt="Image 4"></a>
     <!-- Изображение 4 -->
-    <a href="#"><img src="{% static 'images/image3.png' %}" alt="Image 3"></a>
+    <a href="#"><img src="{% static 'images/image5.png' %}" alt="Image 3"></a>
 </div>
 
 {% if request.user.is_authenticated %}
 <div class="user-info">
-    <img src="{% static 'images/image33.png' %}" alt="Image 3"></a>
-    <p>User {{ request.user.id }}</p>
-    <p>{{ request.user.email }}</p>
+    <div class="user-details">
+        <p class="username">User {{ request.user.id }}</p>
+        <p class="email">{{ request.user.email }}</p>
+        <p><a href="{% url 'logout' %}" style="color: white;">Logout</a></p> <!-- Ссылка для выхода из системы -->
+    </div>
+    <a href="#"><img src="{% static 'images/profilepic.png' %}" alt="User Image"></a>
 </div>
 {% endif %}
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from postCreator.views import HomeView, Privacy_Policy, HomePostCreatorView, CreatePostView
-from accounts.views import SignInView, WelcomeView
+from accounts.views import SignInView, WelcomeView, LogoutView
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from django.conf import settings
@@ -14,5 +14,9 @@ urlpatterns = [
     path('home/', HomePostCreatorView.as_view(), name="home-link"),
     path('create_post/', CreatePostView.as_view(), name="create_post-link"),
     path('Privacy_Policy/', Privacy_Policy.as_view(), name="Privacy_Policy-link"),
-        path('Privacy_Policy.html', RedirectView.as_view(url='/Privacy_Policy/')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('Privacy_Policy.html', RedirectView.as_view(url='/Privacy_Policy/')),
+    path('logout/', LogoutView.as_view(), name='logout'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

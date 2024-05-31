@@ -1,6 +1,4 @@
-# файл app/accounts/views.py
-
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from django.views import View
 from .forms import SignUpForm, LoginForm
@@ -32,3 +30,8 @@ class WelcomeView(View):
             login(request, user)
             return redirect('home-link')
         return render(request, 'Welcome.html', {'form': form})
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('home-link')
