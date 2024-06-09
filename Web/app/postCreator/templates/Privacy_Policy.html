@@ -14,47 +14,46 @@
             background: rgb(100, 10, 72);
             background: linear-gradient(300deg, rgba(0, 65, 70, 1) 0%, rgba(0, 10, 72, 1) 100%);
             display: flex;
-            align-items: flex-start; /* Чтобы заголовок был слева */
-            justify-content: flex-start; /* Чтобы заголовок был слева */
-            flex-direction: column; /* Для вертикального выравнивания */
-            padding-left: 20px; /* Для отступа заголовка от левого края */
-            font-family: 'Archivo', sans-serif; /* Применяем шрифт Archivo */
-
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-left: 20px;
+            font-family: 'Archivo', sans-serif;
         }
 
         .title {
             color: white;
-            text-align: left; /* Выравниваем текст заголовка по левому краю */
-            margin-bottom: 20px; /* Добавлено для создания промежутка между заголовком и секциями */
+            text-align: left;
+            margin-bottom: 20px;
         }
 
         .container {
             display: flex;
             width: 100%;
-            height: 100%; /* Растягиваем контейнер на всю высоту */
+            height: 100%;
         }
 
         .left-section, .right-section {
-            background-color: rgba(0, 0, 0, 0.2); /* Добавляем немного непрозрачности */
-            width: auto; /* Чтобы размер секций определялся содержимым */
-            margin: 0 10px; /* Добавлено для отступов между секциями */
-            padding: 10px; /* Добавлено для создания отступов внутри секций */
-            border-radius: 10px; /* Скругляем углы */
-            flex-grow: 1; /* Растягиваем секции на всю доступную ширину */
-            color: white; /* Белый цвет текста */
+            background-color: rgba(0, 0, 0, 0.2);
+            width: auto;
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 10px;
+            flex-grow: 1;
+            color: white;
         }
 
         .left-section {
-            flex-basis: 30%; /* Сделать первую секцию 30% ширины */
+            flex-basis: 30%;
         }
 
         .right-section {
-            flex-basis: 70%; /* Сделать вторую секцию 70% ширины */
+            flex-basis: 70%;
         }
 
         section {
-            margin-bottom: 10px; /* Добавлено для отступов между пунктами списка */
-            text-align: left; /* Выравниваем текст внутри секции по левому краю */
+            margin-bottom: 10px;
+            text-align: left;
         }
 
         section h2 {
@@ -62,19 +61,23 @@
         }
 
         .center-text {
-            text-align: center; /* Центрируем текст */
+            text-align: center;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
         }
 
         footer {
             display: flex;
-            justify-content: flex-end; /* Выравниваем кнопки по правому краю */
+            justify-content: flex-end;
             margin-top: 20px;
-            width: 100%; /* Ширина footer на всю ширину контейнера */
-            padding-right: 20px; /* Добавляем отступ справа для кнопок */
+            width: 100%;
+            padding-right: 20px;
         }
 
         button {
-            margin-left: 10px; /* Добавляем отступ между кнопками */
+            margin-left: 10px;
             padding: 10px 20px;
             font-size: 16px;
             background-color: rgba(0, 0, 0, 0.2);
@@ -83,7 +86,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: 'Archivo', sans-serif; /* Применяем шрифт Archivo */
+            font-family: 'Archivo', sans-serif;
         }
 
         button:hover {
@@ -91,27 +94,27 @@
         }
 
         a {
-            color: white; /* Цвет ссылки */
-            text-decoration: none; /* Убираем подчеркивание ссылки */
+            color: white;
+            text-decoration: none;
         }
 
         a:hover {
-            text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылку */
+            text-decoration: underline;
         }
 
         body {
             background-color: #808080;
-            margin: 0; /* Убираем внешние отступы у body */
+            margin: 0;
         }
     </style>
 </head>
 <body class="global">
     <h1 class="title">The terms of Privacy Policy</h1>
     <div class="container">
-        <div class="left-section">
+        <div class="left-section" id="left-section">
             <section>
-                <p>• General Public License</p>
-                <p>• Apache License version 2.0</p>
+                <p id="gpl">• General Public License</p>
+                <p id="apache">• Apache License version 2.0</p>
             </section>
         </div>
         <div class="right-section" id="content-section">
@@ -126,7 +129,7 @@
         </div>
     </div>
     <footer>
-        <button onclick="location.href='http://127.0.0.1:8000/welcome/';">Accept</button>
+        <button onclick="acceptContent()">Accept</button>
         <button onclick="changeContent()">Next</button>
         <button>Decline</button>
     </footer>
@@ -134,23 +137,22 @@
     <script>
         function changeContent() {
             const contentSection = document.getElementById('content-section');
+            const gplSection = document.getElementById('gpl');
+            gplSection.classList.add('strikethrough');
             contentSection.innerHTML = `
                 <section>
                     <p class="center-text">Apache License version 2.0</p>
                     <p>"License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
-
-<p>"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
-
-<p>"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
-
-<p>"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
+                    <p>"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
+                    <p>"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
+                    <p>"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
                 </section>
             `;
         }
 
-        document.getElementById("agree").addEventListener("change", function() {
-            document.getElementById("acceptButton").disabled = !this.checked;
-        });
+        function acceptContent() {
+            location.href = 'http://127.0.0.1:8000/welcome/';
+        }
     </script>
 </body>
 </html>

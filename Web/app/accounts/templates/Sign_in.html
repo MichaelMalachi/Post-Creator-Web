@@ -117,12 +117,16 @@
         background-color: #333;
     }
 
+    .checkbox {
+        display: flex;
+        justify-content: center; /* Center align */
+        align-items: center;
+    }
+
     .checkbox label {
-        color: #fff;
-        display: block;
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 5px; /* Еще меньший отступ */
+        color: #bbb; /* Less saturated color */
+        display: flex;
+        align-items: center;
         cursor: pointer;
         font-size: 22px;
         user-select: none;
@@ -137,13 +141,12 @@
     }
 
     .checkbox .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: relative;
         height: 25px;
         width: 25px;
-        background-color: #eee;
-        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.3); /* Match the input fields' color */
+        border-radius: 50%; /* Add rounded corners */
+        margin-right: 10px; /* Space between checkbox and label */
     }
 
     .checkbox:hover input ~ .checkmark {
@@ -181,7 +184,6 @@
 
     <h2>Session</h2>
     <form method="post">
-        {% csrf_token %}
         <div class="form-group">
             <span class="question-mark">?</span>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
@@ -212,9 +214,10 @@
             <span class="question-mark">?</span>
             <input type="text" id="role" name="role" placeholder="Role">
         </div>
-        <div class="form-group">
-            <label class="checkbox">
+        <div class="form-group checkbox">
+            <label>
                 <input type="checkbox" id="keep_signed_in" name="keep_signed_in">
+                <span class="checkmark"></span>
                 Keep me signed in
             </label>
         </div>

@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function increaseWidth() {
         loaderWidth++;
         loader.style.width = loaderWidth + '%';
-        if (loaderWidth >= 195) {
+        if (loaderWidth >=195) {
             clearInterval(interval);
             // Изменяем URL на нужный, без расширения
             window.location.href = "/Privacy_Policy/";
         }
     }
 
-    var interval = setInterval(increaseWidth, 50);
+    var interval = setInterval(increaseWidth, 5);
 });

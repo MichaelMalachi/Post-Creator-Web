@@ -50,8 +50,7 @@
 
         .image-section {
             display: flex;
-            justify-content: center; /* Центрирование содержимого */
-            align-items: center;
+            flex-wrap: wrap;
             gap: 20px; /* Расстояние между элементами */
             width: 100%;
         }
@@ -70,13 +69,13 @@
         .image-preview {
             border: 2px solid white;
             background-color: rgba(255, 255, 255, 0.1);
+            display: none; /* Initially hidden */
         }
 
         .preview-image {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: none;
         }
 
         .add-image {
@@ -112,33 +111,25 @@
             align-items: center;
         }
 
-        .tags-input {
-            width: 200px;
-            height: 30px;
-            border: none;
-            border-radius: 20px;
-            margin-left: 10px;
-            padding: 5px 10px;
-            font-size: 16px;
-            box-sizing: border-box;
-            background: rgb(52, 49, 137);
-            color: white;
-        }
-
+        .tags-input,
         .text-input {
-            width: 200px;
+            width: 4ch; /* Initial width of 4 characters */
             height: 30px;
             border: none;
             border-radius: 20px;
             margin-left: 10px;
-            padding: 5px 10px;
+            padding: 5px 0; /* Remove default padding */
             font-size: 16px;
             box-sizing: border-box;
             background: rgb(52, 49, 137);
             color: white;
+            margin-bottom: 0px; /* Added margin-bottom */
+            transition: width 0.2s; /* Smooth transition for width change */
         }
 
-        .add-tag-btn {
+        .add-tag-btn,
+        .add-target-btn,
+        .add-text-btn {
             width: 30px;
             height: 30px;
             border: none;
@@ -154,14 +145,19 @@
             align-items: center;
         }
 
-        .add-tag-btn:hover {
+        .add-tag-btn:hover,
+        .add-target-btn:hover,
+        .add-text-btn:hover {
             background: rgb(62, 59, 147);
         }
 
-        .tags-wrapper {
+        .tags-wrapper,
+        .text-wrapper,
+        .targets-wrapper {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px; /* Added gap between rows */
         }
 
         .large-text-input-container {
@@ -176,7 +172,6 @@
             border: none;
             border-radius: 10px;
             padding: 10px;
-            padding-right: 70px; /* Add padding to the right */
             font-size: 16px;
             box-sizing: border-box;
             background: rgb(52, 49, 137);
@@ -214,23 +209,6 @@
             background: rgb(62, 59, 147);
         }
 
-        .add-target-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            background: rgb(52, 49, 137);
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .add-target-btn:hover {
-            background: rgb(62, 59, 147);
-        }
-
         .icon-container {
             position: absolute;
             top: 10px;
@@ -254,12 +232,7 @@
     <div class="media-section">
         <span class="media-label">Media:</span>
         <!-- Размещение элементов, связанных с изображениями -->
-        <div class="image-section">
-            <!-- Превью изображения слева -->
-            <div class="image-preview" id="image-preview">
-                <!-- Удален элемент img -->
-                <img class="preview-image" id="preview-image" src="" alt="">
-            </div>
+        <div class="image-section" id="image-section">
             <!-- Кнопка для добавления изображения -->
             <div class="add-image" onclick="document.getElementById('file-input').click()">
                 +
@@ -273,7 +246,6 @@
         <div class="tags-container">
             <label for="tags-input">Tags:</label>
             <div class="tags-wrapper" id="tags-wrapper">
-                <input type="text" id="tags-input" class="tags-input">
                 <button class="add-tag-btn" onclick="addTag()">+</button>
             </div>
         </div>
@@ -281,67 +253,126 @@
         <!-- Контейнер для "Text:" и поля ввода -->
         <div class="text-container">
             <label for="text-input">Text:</label>
-            <input type="text" id="text-input" class="text-input">
+            <div class="text-wrapper" id="text-wrapper">
+                <button class="add-text-btn" onclick="addTextInput()">+</button>
+            </div>
         </div>
 
         <!-- Большое текстовое поле для ввода -->
         <div class="large-text-input-container">
-            <textarea id="large-text-input" class="large-text-input">Lorem ipsum by your side. At this moment the client is busy. I am standing in the dark, and listening to you, and all I feel is and exclude that moment from your lifes.</textarea>
-            <div class="icon-container">
-                <a href="#"><img src="{% static 'images/bulb1.png' %}" alt="Image 1"></a>
-                <a href="#"><img src="{% static 'images/wrench1.png' %}" alt="Image 2"></a>
+            <textarea id="large-text-input" class="large-text-input" placeholder="Generated text will appear here..." readonly></textarea>
+            <div class="icon-container" style="display: none;">
+                <a href="#"><img src="{% static 'images/bulb1.png' %}" alt="Image 1" class="generate-icon"></a>
+                <a href="#"><img src="{% static 'images/wrench1.png' %}" alt="Image 2" class="improve-icon" style="display: none;"></a>
             </div>
         </div>
-
     </div>
 
     <!-- Секция "Targets" -->
     <div class="targets-container">
         <label class="targets-label">Targets:</label>
-        <div class="targets-buttons">
-            <button class="target-btn">Telegram</button>
-            <button class="target-btn">Viber</button>
+        <div class="targets-wrapper" id="targets-wrapper">
             <button class="add-target-btn" onclick="addTarget()">+</button>
         </div>
     </div>
 
     <script>
-        // Функция для отображения предварительного просмотра выбранного изображения
+        // Function to display a preview of the selected image
         function previewImage(event) {
             var input = event.target;
             var reader = new FileReader();
             reader.onload = function(){
-                var preview = document.getElementById('preview-image');
-                var previewContainer = document.getElementById('image-preview');
+                var imageSection = document.getElementById('image-section');
+
+                var previewContainer = document.createElement('div');
+                previewContainer.className = 'image-preview';
+
+                var preview = document.createElement('img');
+                preview.className = 'preview-image';
                 preview.src = reader.result;
-                preview.style.display = 'block'; // Показываем изображение
-                previewContainer.style.backgroundColor = 'transparent'; // Убираем фон превью после загрузки изображения
+
+                previewContainer.appendChild(preview);
+                previewContainer.style.display = 'flex'; // Show the preview container
+                imageSection.insertBefore(previewContainer, imageSection.lastElementChild); // Insert before the "+" button
             };
             reader.readAsDataURL(input.files[0]);
         }
 
-        // Функция для добавления нового поля ввода тега
+        // Function to add a new tag input field
         function addTag() {
             var tagsWrapper = document.getElementById('tags-wrapper');
-            var tagInputs = tagsWrapper.getElementsByClassName('tags-input');
-            if (tagInputs.length < 6) {
-                var newTagInput = document.createElement('input');
-                newTagInput.type = 'text';
-                newTagInput.className = 'tags-input';
-                tagsWrapper.insertBefore(newTagInput, tagsWrapper.lastElementChild); // Вставляем новое поле ввода перед кнопкой "+"
-            } else {
-                alert('You can only add up to 6 tags.');
-            }
+            var newTagInput = document.createElement('input');
+            newTagInput.type = 'text';
+            newTagInput.className = 'tags-input';
+            newTagInput.setAttribute('oninput', 'resizeInput(this)');
+            tagsWrapper.insertBefore(newTagInput, tagsWrapper.lastElementChild); // Insert the new input field before the "+" button
+            resizeInput(newTagInput); // Adjust width initially
         }
 
-        // Функция для добавления новой кнопки цели
-        function addTarget() {
-            var targetsButtons = document.querySelector('.targets-buttons');
-            var newTargetBtn = document.createElement('button');
-            newTargetBtn.className = 'target-btn';
-            newTargetBtn.textContent = ''; // Задаем текст кнопки
-            targetsButtons.insertBefore(newTargetBtn, targetsButtons.lastElementChild); // Вставляем новую кнопку перед кнопкой "+"
+        // Function to add a new text input field
+        function addTextInput() {
+            var textWrapper = document.getElementById('text-wrapper');
+            var newTextInput = document.createElement('input');
+            newTextInput.type = 'text';
+            newTextInput.className = 'text-input';
+            newTextInput.setAttribute('oninput', 'resizeInput(this)');
+            textWrapper.insertBefore(newTextInput, textWrapper.lastElementChild); // Insert the new input field before the "+" button
+            resizeInput(newTextInput); // Adjust width initially
+
+            newTextInput.addEventListener('input', function () {
+                var iconContainer = document.querySelector('.icon-container');
+                var text = this.value.trim();
+                var largeTextInput = document.getElementById('large-text-input');
+
+                largeTextInput.value = text; // Copy text to large text input
+
+                if (text.length > 0) {
+                    iconContainer.style.display = 'flex';
+                    document.querySelector('.generate-icon').style.display = 'block';
+                    document.querySelector('.improve-icon').style.display = 'none';
+                } else {
+                    iconContainer.style.display = 'none';
+                }
+            });
         }
+
+        // Function to add a new target input field
+        function addTarget() {
+            var targetsWrapper = document.getElementById('targets-wrapper');
+            var newTargetInput = document.createElement('input');
+            newTargetInput.type = 'text';
+            newTargetInput.className = 'text-input';
+            newTargetInput.setAttribute('oninput', 'resizeInput(this)');
+            targetsWrapper.insertBefore(newTargetInput, targetsWrapper.lastElementChild); // Insert the new input field before the "+" button
+            resizeInput(newTargetInput); // Adjust width initially
+        }
+
+        // Function to resize input field based on content
+        function resizeInput(input) {
+            input.style.width = Math.max(4, input.value.length) + 'ch';
+        }
+
+        // Example function to handle text generation (replace with actual implementation)
+        document.querySelector('.generate-icon').addEventListener('click', function () {
+            var textArea = document.getElementById('large-text-input');
+            var text = textArea.value.trim();
+            if (text.length > 0) {
+                // Placeholder for text generation logic
+                textArea.value += " Generated text.";
+                document.querySelector('.improve-icon').style.display = 'block';
+                this.style.display = 'none';
+            }
+        });
+
+        // Example function to handle text improvement (replace with actual implementation)
+        document.querySelector('.improve-icon').addEventListener('click', function () {
+            var textArea = document.getElementById('large-text-input');
+            var text = textArea.value.trim();
+            if (text.length > 0) {
+                // Placeholder for text improvement logic
+                textArea.value += " Improved text.";
+            }
+        });
     </script>
 </body>
 </html>
