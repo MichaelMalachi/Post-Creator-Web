@@ -1,6 +1,8 @@
-from django.contrib.auth import login, authenticate, logout
+# accounts/views.py
+
 from django.shortcuts import render, redirect
 from django.views import View
+from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm, LoginForm
 
 class SignInView(View):
@@ -20,6 +22,11 @@ class SignInView(View):
 
 class WelcomeView(View):
     def get(self, request):
+        if request.user.is_authenticated:
+            if request.COOKIES.get('saw_index'):
+                return redirect('home_post_creator-link')
+            else:
+                return redirect('home-link')
         form = LoginForm()
         return render(request, 'Welcome.html', {'form': form})
 

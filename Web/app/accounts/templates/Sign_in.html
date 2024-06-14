@@ -184,6 +184,7 @@
 
     <h2>Session</h2>
     <form method="post">
+        {% csrf_token %}
         <div class="form-group">
             <span class="question-mark">?</span>
             <input type="email" id="email" name="email" placeholder="E-mail" required>

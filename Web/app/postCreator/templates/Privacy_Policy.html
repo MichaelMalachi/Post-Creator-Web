@@ -93,6 +93,11 @@
             background-color: #45a049;
         }
 
+        button:disabled {
+            background-color: #808080;
+            cursor: not-allowed;
+        }
+
         a {
             color: white;
             text-decoration: none;
@@ -118,7 +123,7 @@
             </section>
         </div>
         <div class="right-section" id="content-section">
-            <section>
+            <section id="license-content">
                 <p class="center-text">GNU General Public License v2</p>
                 <p>Copyright (C) 2007 Free Software Foundation, Inc. <a href="https://fsf.org/" style="color: white;">https://fsf.org/</a></p>
                 <p>Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.</p>
@@ -129,29 +134,40 @@
         </div>
     </div>
     <footer>
-        <button onclick="acceptContent()">Accept</button>
-        <button onclick="changeContent()">Next</button>
+        <button onclick="acceptTerms()">Accept</button>
+        <button id="nextButton" onclick="nextPage()" disabled>Next</button>
         <button>Decline</button>
     </footer>
 
     <script>
-        function changeContent() {
-            const contentSection = document.getElementById('content-section');
+        let acceptCount = 0;
+
+        function acceptTerms() {
             const gplSection = document.getElementById('gpl');
-            gplSection.classList.add('strikethrough');
-            contentSection.innerHTML = `
-                <section>
-                    <p class="center-text">Apache License version 2.0</p>
-                    <p>"License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
-                    <p>"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
-                    <p>"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
-                    <p>"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
-                </section>
-            `;
+            const apacheSection = document.getElementById('apache');
+            const contentSection = document.getElementById('license-content');
+            const nextButton = document.getElementById('nextButton');
+
+            if (acceptCount === 0) {
+                gplSection.classList.add('strikethrough');
+                contentSection.innerHTML = `
+                    <p>APACHE LICENSE, VERSION 2.0</p>
+                    <p>Text version: <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" style="color: white;">https://www.apache.org/licenses/LICENSE-2.0.txt</a></p>
+                    <p>SPDX short identifier: Apache-2.0</p>
+                    <p>OSI Approved License: <a href="https://opensource.org/licenses/Apache-2.0" style="color: white;">https://opensource.org/licenses/Apache-2.0</a></p>
+                    <p>The 2.0 version of the Apache License, approved by the ASF in 2004, helps us achieve our goal of providing reliable and long-lived software products through collaborative, open-source software development.</p>
+                    <p>All packages produced by the ASF are implicitly licensed under the Apache License, Version 2.0, unless otherwise explicitly stated.</p>
+                `;
+            } else if (acceptCount === 1) {
+                apacheSection.classList.add('strikethrough');
+                nextButton.disabled = false;
+            }
+
+            acceptCount++;
         }
 
-        function acceptContent() {
-            location.href = 'http://127.0.0.1:8000/welcome/';
+        function nextPage() {
+            window.location.href = 'http://127.0.0.1:8000/welcome/';
         }
     </script>
 </body>
