@@ -51,13 +51,13 @@
         .image-section {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px; /* Расстояние между элементами */
+            gap: 20px;
             width: 100%;
         }
 
         .image-preview,
         .add-image {
-            width: 200px; /* Фиксированная ширина */
+            width: 200px;
             height: 200px;
             display: flex;
             justify-content: center;
@@ -69,7 +69,7 @@
         .image-preview {
             border: 2px solid white;
             background-color: rgba(255, 255, 255, 0.1);
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         .preview-image {
@@ -113,18 +113,18 @@
 
         .tags-input,
         .text-input {
-            width: 4ch; /* Initial width of 4 characters */
+            width: 4ch;
             height: 30px;
             border: none;
             border-radius: 20px;
             margin-left: 10px;
-            padding: 5px 0; /* Remove default padding */
+            padding: 5px 0;
             font-size: 16px;
             box-sizing: border-box;
             background: rgb(52, 49, 137);
             color: white;
-            margin-bottom: 0px; /* Added margin-bottom */
-            transition: width 0.2s; /* Smooth transition for width change */
+            margin-bottom: 0px;
+            transition: width 0.2s;
         }
 
         .add-tag-btn,
@@ -157,7 +157,7 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px; /* Added gap between rows */
+            gap: 10px;
         }
 
         .large-text-input-container {
@@ -221,19 +221,35 @@
             width: 24px;
             height: 24px;
         }
+
+        .publish-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: rgb(52, 49, 137);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: none;
+        }
+
+        .publish-btn:hover {
+            background: rgb(62, 59, 147);
+        }
     </style>
 </head>
 <body class="global">
 {% load static %}
-    <!-- Create а Post -->
+    <!-- Create a Post -->
     <a class="back-link" href="javascript:history.go(-1)"> < </a>
-    <span class="create-post">Create а Post</span> <!-- "Create а Post" с выравниванием по вертикали -->
+    <span class="create-post">Create a Post</span>
 
     <div class="media-section">
         <span class="media-label">Media:</span>
-        <!-- Размещение элементов, связанных с изображениями -->
         <div class="image-section" id="image-section">
-            <!-- Кнопка для добавления изображения -->
             <div class="add-image" onclick="document.getElementById('file-input').click()">
                 +
                 <input type="file" id="file-input" class="file-input-label" accept="image/*" onchange="previewImage(event)">
@@ -242,7 +258,6 @@
     </div>
 
     <div class="tags-text-section">
-        <!-- Контейнер для "Tags:" и поля ввода -->
         <div class="tags-container">
             <label for="tags-input">Tags:</label>
             <div class="tags-wrapper" id="tags-wrapper">
@@ -250,7 +265,6 @@
             </div>
         </div>
 
-        <!-- Контейнер для "Text:" и поля ввода -->
         <div class="text-container">
             <label for="text-input">Text:</label>
             <div class="text-wrapper" id="text-wrapper">
@@ -258,7 +272,6 @@
             </div>
         </div>
 
-        <!-- Большое текстовое поле для ввода -->
         <div class="large-text-input-container">
             <textarea id="large-text-input" class="large-text-input" placeholder="Generated text will appear here..." readonly></textarea>
             <div class="icon-container" style="display: none;">
@@ -268,7 +281,6 @@
         </div>
     </div>
 
-    <!-- Секция "Targets" -->
     <div class="targets-container">
         <label class="targets-label">Targets:</label>
         <div class="targets-wrapper" id="targets-wrapper">
@@ -276,55 +288,51 @@
         </div>
     </div>
 
+    <!-- Publish Button -->
+    <button class="publish-btn" onclick="publishToTelegram()">Publish</button>
+
     <script>
-        // Function to display a preview of the selected image
         function previewImage(event) {
             var input = event.target;
             var reader = new FileReader();
             reader.onload = function(){
                 var imageSection = document.getElementById('image-section');
-
                 var previewContainer = document.createElement('div');
                 previewContainer.className = 'image-preview';
-
                 var preview = document.createElement('img');
                 preview.className = 'preview-image';
                 preview.src = reader.result;
-
                 previewContainer.appendChild(preview);
-                previewContainer.style.display = 'flex'; // Show the preview container
-                imageSection.insertBefore(previewContainer, imageSection.lastElementChild); // Insert before the "+" button
+                previewContainer.style.display = 'flex';
+                imageSection.insertBefore(previewContainer, imageSection.lastElementChild);
             };
             reader.readAsDataURL(input.files[0]);
         }
 
-        // Function to add a new tag input field
         function addTag() {
             var tagsWrapper = document.getElementById('tags-wrapper');
             var newTagInput = document.createElement('input');
             newTagInput.type = 'text';
             newTagInput.className = 'tags-input';
             newTagInput.setAttribute('oninput', 'resizeInput(this)');
-            tagsWrapper.insertBefore(newTagInput, tagsWrapper.lastElementChild); // Insert the new input field before the "+" button
-            resizeInput(newTagInput); // Adjust width initially
+            tagsWrapper.insertBefore(newTagInput, tagsWrapper.lastElementChild);
+            resizeInput(newTagInput);
         }
 
-        // Function to add a new text input field
         function addTextInput() {
             var textWrapper = document.getElementById('text-wrapper');
             var newTextInput = document.createElement('input');
             newTextInput.type = 'text';
             newTextInput.className = 'text-input';
             newTextInput.setAttribute('oninput', 'resizeInput(this)');
-            textWrapper.insertBefore(newTextInput, textWrapper.lastElementChild); // Insert the new input field before the "+" button
-            resizeInput(newTextInput); // Adjust width initially
+            textWrapper.insertBefore(newTextInput, textWrapper.lastElementChild);
+            resizeInput(newTextInput);
 
             newTextInput.addEventListener('input', function () {
                 var iconContainer = document.querySelector('.icon-container');
                 var text = this.value.trim();
                 var largeTextInput = document.getElementById('large-text-input');
-
-                largeTextInput.value = text; // Copy text to large text input
+                largeTextInput.value = text;
 
                 if (text.length > 0) {
                     iconContainer.style.display = 'flex';
@@ -336,43 +344,103 @@
             });
         }
 
-        // Function to add a new target input field
         function addTarget() {
             var targetsWrapper = document.getElementById('targets-wrapper');
             var newTargetInput = document.createElement('input');
             newTargetInput.type = 'text';
             newTargetInput.className = 'text-input';
             newTargetInput.setAttribute('oninput', 'resizeInput(this)');
-            targetsWrapper.insertBefore(newTargetInput, targetsWrapper.lastElementChild); // Insert the new input field before the "+" button
-            resizeInput(newTargetInput); // Adjust width initially
+            targetsWrapper.insertBefore(newTargetInput, targetsWrapper.lastElementChild);
+            resizeInput(newTargetInput);
         }
 
-        // Function to resize input field based on content
         function resizeInput(input) {
             input.style.width = Math.max(4, input.value.length) + 'ch';
         }
 
-        // Example function to handle text generation (replace with actual implementation)
-        document.querySelector('.generate-icon').addEventListener('click', function () {
-            var textArea = document.getElementById('large-text-input');
-            var text = textArea.value.trim();
-            if (text.length > 0) {
-                // Placeholder for text generation logic
-                textArea.value += " Generated text.";
-                document.querySelector('.improve-icon').style.display = 'block';
-                this.style.display = 'none';
-            }
-        });
+        function publishToTelegram() {
+            fetch('/keys.json')
+                .then(response => response.json())
+                .then(keys => {
+                    var text = document.getElementById('large-text-input').value.trim();
+                    var imageInput = document.getElementById('file-input');
+                    var tagElements = document.querySelectorAll('.tags-input');
+                    var tags = [];
 
-        // Example function to handle text improvement (replace with actual implementation)
-        document.querySelector('.improve-icon').addEventListener('click', function () {
-            var textArea = document.getElementById('large-text-input');
-            var text = textArea.value.trim();
-            if (text.length > 0) {
-                // Placeholder for text improvement logic
-                textArea.value += " Improved text.";
-            }
-        });
+                    tagElements.forEach(tagElement => {
+                        if (tagElement.value.trim() !== '') {
+                            tags.push(tagElement.value.trim());
+                        }
+                    });
+
+                    if (text.length === 0 && imageInput.files.length === 0 && tags.length === 0) {
+                        alert('Please enter text, select an image, or add tags to publish.');
+                        return;
+                    }
+
+                    var token = keys.botToken;
+                    var chatId = keys.chatId;
+
+                    if (text.length > 0 || tags.length > 0) {
+                        var urlText = `https://api.telegram.org/bot${token}/sendMessage`;
+                        var dataText = {
+                            chat_id: chatId,
+                            text: text + (tags.length > 0 ? '\n\nTags: ' + tags.join(', ') : '')
+                        };
+
+                        fetch(urlText, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(dataText)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (!data.ok) {
+                                alert('Error publishing message: ' + data.description);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred while publishing the message.');
+                        });
+                    }
+
+                    if (imageInput.files.length > 0) {
+                        var formData = new FormData();
+                        formData.append('chat_id', chatId);
+                        formData.append('photo', imageInput.files[0]);
+
+                        var urlImage = `https://api.telegram.org/bot${token}/sendPhoto`;
+
+                        fetch(urlImage, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.ok) {
+                                alert('Image successfully uploaded!');
+                            } else {
+                                alert('Error uploading image: ' + data.description);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred while uploading the image.');
+                        });
+                    }
+
+                    if (text.length > 0 || imageInput.files.length > 0 || tags.length > 0) {
+                        alert('Post successfully published!');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading keys:', error);
+                    alert('An error occurred while loading keys.');
+                });
+        }
     </script>
 </body>
 </html>

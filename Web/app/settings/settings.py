@@ -68,7 +68,7 @@ TEMPLATES = [
         },
     },
 ]
-
+TEMPLATES[0]['DIRS'].append(os.path.join(BASE_DIR, 'keys/templates'))
 WSGI_APPLICATION = 'settings.wsgi.application'
 
 # Database
